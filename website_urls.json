@@ -1,0 +1,111 @@
+[
+    {
+        "company_name": "Curriculum Associates",
+        "URL": "https://curriculumassociates.wd5.myworkdayjobs.com/External?locationHierarchy1=c42169f49ec90117ff4c5acd0701f8da",
+        "website_type": "static_response",
+        "parameters": {
+            "server_url": "https://curriculumassociates.wd5.myworkdayjobs.com/wday/cxs/curriculumassociates/External/jobs",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0",
+                "Content-Type": "application/json"
+            },
+            "method": "POST",
+            "data_json": {
+                "appliedFacets": {
+                    "locationHierarchy1": [
+                        "c42169f49ec90117ff4c5acd0701f8da"
+                    ]
+                }
+            },
+            "index_num": 0
+        },
+        "filters": {
+            "path": "jobPostings",
+            "index": "title"
+        },
+        "available": "True"
+    },
+    {
+        "company_name": "Motion Recruitment",
+        "URL": "https://motionrecruitment.com/tech-jobs?search-city=Boston&location-display-name=Boston%2C+Massachusetts%2C+United+States&postalcode=02108&radius=25&specialties=machine-learning-data-science",
+        "website_type": "static_HTML",
+        "parameters": {
+            "tag": "h2",
+            "attribute": {
+                "class": "JobItem_title__mJtrY"
+            },
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
+    },
+    {
+        "company_name": "NETSCOUT",
+        "URL": "https://netscoutrccorp.peoplefluent.com/res_joblist.html",
+        "website_type": "static_HTML",
+        "parameters": {
+            "tag": "h3",
+            "attribute": {
+                "class": "title"
+            },
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
+    },
+    {
+        "company_name": "TripleTen",
+        "URL": "https://www.comeet.com/jobs/tripleten/98.008",
+        "website_type": "static_customerized",
+        "parameters": {
+            "search_key": "COMPANY_POSITIONS_DATA",
+            "index_num": 1
+        },
+        "filters": [
+            {
+                "location.name": [
+                    "USA",
+                    "REMOTE"
+                ]
+            }
+        ],
+        "available": "True"
+    },
+    {
+        "company_name": "NOKIA",
+        "URL": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?lastSelectedFacet=LOCATIONS&latitude=42.464161155857674&location=239+School+St%2C+Middlesex%2C+MA%2C+United+States&longitude=-71.42785067776921&mode=geolocation&radius=25&radiusUnit=MI&selectedLocationsFacet=300000000480126",
+        "website_type": "dynamic_HTML",
+        "parameters": {
+            "tag": "span",
+            "attribute": {
+                "class": "job-tile__title"
+            },
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
+    },
+    {
+        "company_name": "Seagate",
+        "URL": "https://seagatecareers.com/search/?createNewAlert=false&q=&locationsearch=MA&optionsFacetsDD_country=&optionsFacetsDD_dept=&optionsFacetsDD_customfield1=&optionsFacetsDD_lang=",
+        "website_type": "static_xpath",
+        "parameters": {
+            "xpath_query": "//a[@class='jobTitle-link fontcolor777e3f51b432dec0']/text()",
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
+    },
+    {
+        "company_name": "Mobi",
+        "URL": "https://job-boards.greenhouse.io/mobi",
+        "website_type": "static_customerized",
+        "parameters": {
+            "tag": "script",
+            "attribute": {},
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
+    }
+]
