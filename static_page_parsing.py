@@ -132,10 +132,10 @@ def parsing_by_dynamic(**kwargs):
     driver.quit()
     # 使用 BeautifulSoup 解析 HTML
     soup = BeautifulSoup(html, 'html.parser')
-    soup.find_all("span", class_='job-tile__title')
+    #soup.find_all("span", class_='job-tile__title')
     company_items = soup.find_all(kwargs['parameters']['tag'], attrs=kwargs['parameters']['attribute'])
     for position in company_items:
-        position_list.append(position.text)
+        position_list.append(position.get_text(strip=True))
     #print("position_list = ", position_list)
     return position_list
 

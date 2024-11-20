@@ -107,5 +107,19 @@
         },
         "filters": [],
         "available": "True"
+    },
+    {
+        "company_name": "Lendbuzz",
+        "URL": "https://www.lendbuzz.com/careers/engineering",
+        "website_type": "dynamic_HTML",
+        "parameters": {
+            "tag": "a",
+            "attribute": {
+                "class": "job-title"
+            },
+            "index_num": 0
+        },
+        "filters": [],
+        "available": "True"
     }
 ]
