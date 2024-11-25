@@ -7,6 +7,7 @@ from selectolax.parser import HTMLParser
 import chompjs
 import customerized_companies_parsing
 from parsel import Selector
+from requests_html import HTMLSession
 
 CUSTOMERIZED_COMPANYIES_LIST = ['TripleTen']
 
@@ -140,7 +141,16 @@ def parsing_by_dynamic(**kwargs):
     return position_list
 
 
+def parsing_by_dynamic_session(**kwargs):
+    position_list = []
+    session = HTMLSession()
+    response = session.get(kwargs['URL'])
+    soup = BeautifulSoup(response.content, 'html.parser')
+    company_items = soup.find_all(kwargs['parameters']['tag'], attrs=kwargs['parameters']['attribute'])
+    for position in company_items:
+        position_list.append(position.get_text(strip=True))
     return position_list
+
 
 def parsing(websites):
     results = []
@@ -168,9 +178,13 @@ def parsing(websites):
             elif company_info['website_type'] == 'static_xpath':
                 company_result["position_list"] = parsing_by_xpath(**company_info)            
             
-            # Type 3: dynamic_HTML: should wait for simulating actions and wait for the response
+            # Type 5: dynamic_HTML: should wait for simulating actions and wait for the response
             elif company_info['website_type'] == 'dynamic_HTML':
                 company_result["position_list"] = parsing_by_dynamic(**company_info)
+            
+            # Type 6: dynamic_HTML_session: could be get info with session
+            elif company_info['website_type'] == 'dynamic_HTML_session':
+                company_result["position_list"] = parsing_by_dynamic_session(**company_info)
 
             results.append(company_result)
             print(results)
