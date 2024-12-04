@@ -5,9 +5,10 @@ import streamlit as st
 
 def main():
     # load url and other parameters
-    with open('website_urls.json', 'r') as f1, open('filtered_positions.json', 'r') as f2:
+    with open('website_urls.json', 'r') as f1, open('filtered_positions.json', 'r') as f2, open('unparsable_companies.json', 'r') as f3:
         websites = json.load(f1)
         filtered_position_list = json.load(f2)
+        unparsable_companies = json.load(f3)
 
     # Iterate all websites, send them to parsers according to their webpage types.
     results = static_page_parsing.parsing(websites)
@@ -24,6 +25,10 @@ def main():
         else:
             st.write("No available jobs")
             print()
+    
+    st.subheader("Unparsable Companies")
+    for unparsable_company in unparsable_companies:
+        st.markdown(f"**[{unparsable_company['company_name']}]({unparsable_company['URL']})**")
 
 
 
