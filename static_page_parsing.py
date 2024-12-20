@@ -103,7 +103,9 @@ def parsing_by_response(**kwargs):
         for item in content:
             position_list.append(item[kwargs['filters']["index"]])
     else: # "GET"
-        response = requests.get(kwargs['URL'], headers=kwargs['parameter']["header"])
+        response = requests.get(kwargs['parameters']['server_url'], headers=kwargs['parameters']["headers"])
+        content = response.json()
+        exec(kwargs['parameters']['script'])
 
     return position_list
 
@@ -187,7 +189,7 @@ def parsing(websites):
                 company_result["position_list"] = parsing_by_dynamic_session(**company_info)
 
             results.append(company_result)
-            print(results)
+            #print(results)
 
 
 

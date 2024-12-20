@@ -23,6 +23,9 @@
             "path": "jobPostings",
             "index": "title"
         },
+        "is_local": true,
+        "position": [42.574936070623046, -71.30666888400216],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -37,6 +40,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": false,
+        "position": [42.574936070623046, -71.30666888400216],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -51,6 +57,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": true,
+        "position": [42.55309863630028, -71.44162944490446],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -69,6 +78,9 @@
                 ]
             }
         ],
+        "is_local": false,
+        "position": [42.55309863630028, -71.44162944490446],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -83,6 +95,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": true,
+        "position": [42.55134991704785, -71.44829989735447],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -94,6 +109,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": true,
+        "position": [42.56030511657889, -71.43490784961296],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -106,6 +124,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": false,
+        "position": [42.56030511657889, -71.43490784961296],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -120,6 +141,9 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": true,
+        "position": [42.35400065720244, -71.05736954430073],
+        "category": "Tech",
         "available": "True"
     },
     {
@@ -134,6 +158,64 @@
             "index_num": 0
         },
         "filters": [],
+        "is_local": false,
+        "position": [42.56030511657889, -71.43490784961296],
+        "category": "Tech",
+        "available": "True"
+    },
+    {
+        "company_name": "Concept2",
+        "URL": "https://concept2.bamboohr.com/careers",
+        "website_type": "static_response",
+        "parameters": {
+            "server_url": "https://concept2.bamboohr.com/careers/list",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+            },
+            "method": "GET",
+            "script": "for item in content['result']:\n    position_list.append(item['jobOpeningName'])",
+            "index_num": 0
+        },
+        "filters": [],
+        "is_local": false,
+        "position": [42.56030511657889, -71.43490784961296],
+        "category": "Tech",
+        "available": "True"
+    },
+    {
+        "company_name": "Infinidat",
+        "URL": "https://www.infinidat.com/en/careers#currentopenings",
+        "website_type": "dynamic_HTML_session",
+        "parameters": {
+            "tag": "span",
+            "attribute": {
+                "class": "field-content"
+            },
+            "index_num": 0
+        },
+        "filters": [],
+        "is_local": true,
+        "position": [42.39651151734183, -71.25852770808905],
+        "category": "Tech",
+        "available": "True"
+    },
+    {
+        "company_name": "Qlik",
+        "URL": "https://www.qlik.com/us/company/careers/job-listings?page=1&limit=9&country=United%20States",
+        "website_type": "static_response",
+        "parameters": {
+            "server_url": "https://www.qlik.com/page-data/sq/d/1005317560.json",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+            },
+            "method": "GET",
+            "script": "[item['node']['title'] for item in content['data']['jobs']['edges'] if item['node']['jobLocations'][0]['name'] == 'USA - Waltham']",
+            "index_num": 0
+        },
+        "filters": [],
+        "is_local": true,
+        "position": [42.40430562336942, -71.27547648856577],
+        "category": "Tech",
         "available": "True"
     }
 ]
